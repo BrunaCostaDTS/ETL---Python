@@ -1,0 +1,19 @@
+Gere um processo de ETL a partir do arquivo "origem.csv" cuja a saída seja outro arquivo denominado "saida.csv".
+
+Nesse arquivo, deve ser retornada a quantidade de casos novos de tuberculose pulmonar de forma mensal para cada município de Goiás. Esse arquivo deve atender aos seguintes requisitos:
+
+- Uma coluna chamada município, na qual é esperado que contenha o nome de cada município por extenso.
+- Uma coluna chamada mês com o período por extenso no seguinte formato: "<Mês> de <Ano>", exemplo: "Janeiro de 2024".
+- Coluna contendo a "Quantidade" de casos novos de tuberculose pulmonar.
+- Apenas dados a partir de 2021.
+- Será um diferencial caso consiga retornar para todos os períodos a partir de 2021, todos os 246 municípios de Goiás. Caso algum período para determinado município não tenha valores para serem apresentados, a coluna "Quantidade" deve retornar 0 (zero).
+
+Casos novos de tuberculose pulmonar devem seguir os seguintes critérios de tabulação:
+
+- Apenas os pacientes que cuja o tipo de entrada em uma unidade seja classificado como "Caso novo", ou seja, todos os pacientes que nunca se submeteram ao tratamento de tuberculose. Ou então, aqueles pacientes cujo tipo de entrada é classificado como "Pós-óbito" ou cujo tipo de entrada é desconhecido.
+- Cuja forma clínica de tuberculose é classificada como "Pulmonar" ou "Pulmonar + extrapulmonar".
+- Podendo ser qualquer "Situação de encerramento" do caso notificado, exceto "Mudança de Diagnóstico".
+
+Obs.: Para consulta dos conceitos, o dicionário de dados está na pasta "doc/". Na pasta "dimensoes/" podem ser obtidos os dados que compõem as dimensões de município e tempo.
+
+Ferramentas: Para o desenvolvimento do processo de ETL, preferenciamente utilize Pentaho Data Integration (PDI) ou Python. Porém, alguma outra ferramenta de ETL, desde que seja comprovada toda execução do processo de extração, transformação e carga.
